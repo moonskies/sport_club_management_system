@@ -1,0 +1,17 @@
+// UserController.h
+#pragma once
+#include "../repository/UserRepository.h"
+#include "../repository/FieldRepository.h"
+#include "../repository/EquipmentRepository.h"
+
+class UserController {
+    UserRepository& user_repo;
+    FieldRepository& field_repo;
+    EquipmentRepository& equipment_repo;
+
+public:
+    UserController(UserRepository& ur, FieldRepository& fr, EquipmentRepository& er);
+    void add_user(int id);
+    bool field_reservation(int user_id, const std::string& field_type);
+    bool equipment_reservation(int user_id, const std::string& type, int qty);
+};

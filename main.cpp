@@ -1,25 +1,49 @@
+#include "controller/UserController.h"
+#include "repository/FieldRepository.h"
+#include "repository/EquipmentRepository.h"
+#include "repository/UserRepository.h"
+
 #include <iostream>
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the
-    // <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    UserRepository ur;
+    FieldRepository fr;
+    EquipmentRepository er;
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code.
-        // We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/>
-        // breakpoint for you, but you can always add more by pressing
-        // <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
+    ur.load_from_file("data/users.txt");
+    fr.load_from_file("data/fields.txt.txt");
+    er.load_from_file("data/equipment.txt");
+
+    UserController uc(ur, fr, er);
+
+    int opt;
+    std::cout << "1. Rezervare teren\n2. Rezervare echipament\nAlege optiunea: ";
+    std::cin >> opt;
+
+    if (opt == 1) {
+        int user_id;
+        std::string type;
+        std::cout << "ID user: "; std::cin >> user_id;
+        std::cout << "Tip teren: "; std::cin >> type;
+        if (uc.field_reservation(user_id, type))
+            std::cout << "Teren rezervat cu succes.\n";
+        else
+            std::cout << "Nu s-a putut rezerva teren.\n";
+    } else if (opt == 2) {
+        int user_id, qty;
+        std::string type;
+        std::cout << "ID user: "; std::cin >> user_id;
+        std::cout << "Tip echipament: "; std::cin >> type;
+        std::cout << "Numar bucati: "; std::cin >> qty;
+        if (uc.equipment_reservation(user_id, type, qty))
+            std::cout << "Echipament rezervat cu succes.\n";
+        else
+            std::cout << "Eroare: utilizatorul nu are teren sau nu exista echipament suficient.\n";
     }
+
+    ur.save_to_file("data/users.txt");
+    fr.save_to_file("data/fields.txt.txt");
+    er.save_to_file("data/equipment.txt");
 
     return 0;
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.
