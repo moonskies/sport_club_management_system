@@ -8,7 +8,7 @@
 int main() {
     UserRepository ur;
     FieldRepository fr;
-    EquipmentRepository er;
+    EquipmentRepository er;//ceau
 
     ur.load_from_file("data/users.txt");
     fr.load_from_file("data/fields.txt.txt");
