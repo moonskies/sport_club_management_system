@@ -36,3 +36,17 @@ bool UserController::equipment_reservation(int user_id, const std::string& type,
     }
     return false;
 }
+
+bool UserController::spectate_match(int user_id, int field_id) {
+    for (auto& user : user_repo.get_users()) {
+         if (user.get_id_user() == user_id) {
+            for (auto& field : field_repo.get_fields()) {
+                 if (field.get_id_field() == field_id) {
+                     field.add_spectator(user_id);
+                     return true;
+                 }
+            }
+         }
+    }
+    return false;
+}
