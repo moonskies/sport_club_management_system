@@ -1,3 +1,0 @@
-/mnt/c/Users/andre/CLionProjects/oop_sport1/build/CMakeFiles/SportsManagement.dir
-/mnt/c/Users/andre/CLionProjects/oop_sport1/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/andre/CLionProjects/oop_sport1/build/CMakeFiles/rebuild_cache.dir
