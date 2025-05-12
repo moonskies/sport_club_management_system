@@ -26,3 +26,21 @@ void EquipmentRepository::load_from_file(const std::string& filename) {
         equipments.emplace_back(id, type, condition);
     }
 }
+
+Equipment* EquipmentRepository::find_equipment(int id) {
+    for (auto& equipment : equipments) {
+        if (equipment.get_id_equipment() == id)
+            return &equipment;
+    }
+    return nullptr;
+}
+
+bool EquipmentRepository::reserve_equipment(int id, int user_id) {
+    Equipment* equipment = find_equipment(id);
+    if (equipment && equipment->get_id_user() == -1) {
+        equipment->set_id_user(user_id);
+        return true;
+    }
+    return false;
+}
+

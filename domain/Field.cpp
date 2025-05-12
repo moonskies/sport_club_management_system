@@ -12,3 +12,15 @@ int Field::get_max_players_field() const { return max_players_field; }
 void Field::add_spectator(int id_user) {
     spectators.push_back(id_user);
 }
+
+const std::vector<int>& Field::get_spectators() const {
+    return spectators;
+}
+
+bool Field::get_is_private() const {
+    return is_private;
+}
+
+void Field::set_is_private(bool value) {
+    is_private = value;
+}

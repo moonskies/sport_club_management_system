@@ -14,15 +14,15 @@ private:
 public:
     MatchRepository() = default;
 
-    // Adaugă un meci nou
+    // adauga un meci nou
     void addMatch(const std::string& sport, const std::string& location, int capacity, bool isPublic);
 
-    // Returnează toate meciurile
+    // returneaza toate meciurile
     std::vector<Match> getAllMatches() const;
 
-    // Caută meciuri după sport (ex: „fotbal”)
+    // cauta meciuri dupa sport (ex: „fotbal”)
     std::vector<Match> searchBySport(const std::string& sport) const;
 
-    // Găsește un meci după ID (folosit pentru înscriere)
+    // gaseste un meci după ID (folosit pentru inscriere)
     Match* findById(int id);
 };
