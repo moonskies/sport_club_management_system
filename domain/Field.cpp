@@ -8,3 +8,7 @@ int Field::get_id_field() const { return id_field; }
 std::string Field::get_type_field() const { return type_field; }
 std::string Field::get_condition_field() const { return condition_field; }
 int Field::get_max_players_field() const { return max_players_field; }
+
+void Field::add_spectator(int id_user) {
+    spectators.push_back(id_user);
+}
