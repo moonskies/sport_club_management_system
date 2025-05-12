@@ -20,6 +20,7 @@ public:
     int get_max_players_field() const;
     bool get_is_private() const;
     std::vector<int> get_spectators() const
+    void set_is_private(bool value);
 
     void add_spectator(int id_user)
 };
