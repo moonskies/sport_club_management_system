@@ -1,10 +1,10 @@
 #include "ui.h"
-#include "controller/UserController.h"
-#include "repository/FieldRepository.h"
-#include "repository/EquipmentRepository.h"
-#include "repository/UserRepository.h"
-#include "controller/MatchController.h"
-#include "repository/MatchRepository.h"
+#include "../controller/UserController.h"
+#include "../repository/FieldRepository.h"
+#include "../repository/EquipmentRepository.h"
+#include "../repository/UserRepository.h"
+#include "../controller/MatchController.h"
+#include "../repository/MatchRepository.h"
 
 #include <iostream>
 #include <string>

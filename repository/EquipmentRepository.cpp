@@ -1,5 +1,6 @@
 // EquipmentRepository.cpp
 #include "EquipmentRepository.h"
+#include "Equipment.h"
 #include <fstream>
 
 void EquipmentRepository::add_equipment(const Equipment& e) {

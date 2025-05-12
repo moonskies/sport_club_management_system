@@ -13,7 +13,7 @@ void Field::add_spectator(int id_user) {
     spectators.push_back(id_user);
 }
 
-const std::vector<int>& Field::get_spectators() const {
+std::vector<int> Field::get_spectators() const {
     return spectators;
 }
 
