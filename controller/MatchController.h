@@ -9,24 +9,24 @@
 
 class MatchController {
 private:
-    MatchRepository& repo;
+    MatchRepository& repo; //referinta la MatchRepository pt a accesa sau modifica date despre meciuri
 
 public:
-    // Constructor care primește o referință la un repository
+    // Constructor care primeste o referinta la un repository
     MatchController(MatchRepository& repo);
 
-    // Adaugă un meci nou
+    // Adauga un meci nou
     void addMatch(const std::string& sport, const std::string& location, int capacity, bool isPublic);
 
-    // Returnează toate meciurile
+    // Returneaza toate meciurile
     std::vector<Match> getAllMatches() const;
 
-    // Returnează meciuri filtrate după sport
+    // Returneaza meciuri filtrate dupa sport
     std::vector<Match> searchBySport(const std::string& sport) const;
 
-    // Încearcă să înscrie un utilizator la un meci, dacă este public și are locuri
+    // incearca sa înscrie un utilizator la un meci, daca este public și are locuri
     bool enrollUserToMatch(int matchId, const std::string& username);
 
-    // Returnează numărul de locuri disponibile pentru un meci (dacă există)
+    // Returneaza numarul de locuri disponibile pentru un meci (daca exista)
     std::optional<int> getAvailableSpots(int matchId) const;
 };
