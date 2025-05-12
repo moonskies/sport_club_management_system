@@ -4,8 +4,12 @@
 
 
 
-class ui {
+class UI {
+    UserController& user_controller;
     //show()
+    public:
+    UI(UserController& ctrl) : userController(ctrl) {}
+    void reserve_equipment_ui();
 };
 
 

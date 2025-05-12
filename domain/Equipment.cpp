@@ -1,5 +1,6 @@
 // Equipment.cpp
 #include "Equipment.h"
+#include <string>
 
 Equipment::Equipment(int id, std::string type, std::string cond, int user_id)
     : id_equipment(id), type_equipment(type), condition_equipment(cond), id_user(user_id) {}

@@ -12,4 +12,6 @@ public:
     std::vector<Equipment>& get_equipments();
     void save_to_file(const std::string& filename);
     void load_from_file(const std::string& filename);
+    Equipment* find_equipment(int id);
+    bool reserve_equipment(int id, int user_id);
 };
