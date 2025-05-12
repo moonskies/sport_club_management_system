@@ -21,8 +21,9 @@ void FieldRepository::save_to_file(const std::string& filename) {
 void FieldRepository::load_from_file(const std::string& filename) {
     std::ifstream fin(filename);
     int id, max_players;
+    bool privat;
     std::string type, condition;
-    while (fin >> id >> type >> condition >> max_players) {
-        fields.emplace_back(id, type, condition, max_players);
+    while (fin >> id >> type >> condition >> max_players >> privat) {
+        fields.emplace_back(id, type, condition, max_players,privat);
     }
 }

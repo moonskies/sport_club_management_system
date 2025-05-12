@@ -1,8 +1,8 @@
 // Field.cpp
 #include "Field.h"
 
-Field::Field(int id, std::string type, std::string cond, int max_players)
-    : id_field(id), type_field(type), condition_field(cond), max_players_field(max_players) {}
+Field::Field(int id, std::string type, std::string cond, int max_players, bool privat)
+    : id_field(id), type_field(type), condition_field(cond), max_players_field(max_players), is_private(privat) {}
 
 int Field::get_id_field() const { return id_field; }
 std::string Field::get_type_field() const { return type_field; }

@@ -3,9 +3,10 @@
 #include <string>
 #include <vector>
 
-
 class Field {
     int id_field;
+
+
     std::string type_field;
     std::string condition_field;
     int max_players_field;
@@ -19,7 +20,7 @@ public:
     std::string get_condition_field() const;
     int get_max_players_field() const;
     bool get_is_private() const;
-    std::vector<int> get_spectators() const
+    std::vector<int> get_spectators() const;
 
-    void add_spectator(int id_user)
+    void add_spectator(int id_user);
 };

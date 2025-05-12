@@ -1,0 +1,14 @@
+# Individual files inside .idea/ that shouldn't be tracked
+.idea/workspace.xml
+.idea/editor.xml
+.idea/tasks.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+
+
+/cmake-build-debug/
+/CMakeLists.txt

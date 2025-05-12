@@ -1,6 +1,4 @@
-//
-// Created by Alexandra Bota on 12.05.2025.
-//
+
 #pragma once
 
 #include "Field.h"
