@@ -1,12 +1,20 @@
+# ---- JetBrains IDE (CLion) ----
+.idea/
+!.idea/codeStyles/         # Optional: keep code style settings
+!.idea/*.iml               # Optional: keep project/module files if collaborating
+!.idea/modules.xml         # Optional: needed by JetBrains to load modules
+!.idea/vcs.xml             # Optional: VCS settings
+
 # Individual files inside .idea/ that shouldn't be tracked
 .idea/workspace.xml
-.idea/editor.xml
 .idea/tasks.xml
 .idea/dictionaries/
 .idea/shelf/
 .idea/httpRequests/
 .idea/dataSources/
 .idea/dataSources.local.xml
+.idea/editor.xml
+
 
 
 
