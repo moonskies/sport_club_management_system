@@ -2,6 +2,7 @@
 // Created by andre on 12/05/2025.
 //
 #include "MatchRepository.h"
+#include <iostream>
 
 void MatchRepository::addMatch(const std::string& sport, const std::string& location, int capacity, bool isPublic) {
     Match match(nextId++, sport, location, capacity, isPublic);
