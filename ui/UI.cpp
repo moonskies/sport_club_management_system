@@ -5,6 +5,7 @@
 #include "../repository/UserRepository.h"
 #include "../controller/MatchController.h"
 #include "../repository/MatchRepository.h"
+#include "../controller/EquipmentController.h"
 
 #include <iostream>
 #include <string>
@@ -40,6 +41,7 @@ void runUI() {
     UserController uc(ur, fr, er);
     FieldController fc(fr);
     MatchController mc(mr);
+    EquipmentController ec(er);
 
     //fc.show_fields();
 
@@ -125,6 +127,9 @@ void runUI() {
             uc.show_users();
         else if (opt == 9) {
             fc.show_fields();
+        }
+        else if (opt == 10) {
+          ec.show_equipment();
         }
     } while (opt != 0);
 
