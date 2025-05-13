@@ -10,6 +10,6 @@ class UserRepository {
 public:
     void add_user(const User& u);
     std::vector<User>& get_users();
-    void save_to_file(const std::string& filename);
+    void save_to_file(const std::string& filename) const;
     void load_from_file(const std::string& filename);
 };

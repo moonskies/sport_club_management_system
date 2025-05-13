@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include <string>
-#include <filesystem>
+
 
 
 void showMenu() {
@@ -20,6 +20,7 @@ void showMenu() {
     std::cout << "5. Caută meci după sport\n";
     std::cout << "6. Înscrie-te la un meci\n";
     std::cout << "7. Afișează locuri disponibile la un meci\n";
+    std::cout << "8. afiseaza userii\n";
     std::cout << "0. Ieșire\n";
 }
 
@@ -29,13 +30,14 @@ void runUI() {
     EquipmentRepository er;
     MatchRepository mr;
 
-
-    ur.load_from_file("data/users.txt");
-    fr.load_from_file("data/fields.txt");
-    er.load_from_file("data/equipment.txt");
+    ur.load_from_file("../data/users.txt");
+    fr.load_from_file("../data/fields.txt");
+    er.load_from_file("../data/equipment.txt");
 
     UserController uc(ur, fr, er);
     MatchController mc(mr);
+
+
 
     int opt;
     do {
@@ -115,6 +117,8 @@ void runUI() {
             else
                 std::cout << "Meci inexistent.\n";
         }
+        else if (opt ==8)
+            uc.show_users();
     } while (opt != 0);
 
     ur.save_to_file("data/users.txt");

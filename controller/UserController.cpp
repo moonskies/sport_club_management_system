@@ -1,8 +1,24 @@
 // UserController.cpp
 #include "UserController.h"
 
+#include <iostream>
+
 UserController::UserController(UserRepository& ur, FieldRepository& fr, EquipmentRepository& er)
     : user_repo(ur), field_repo(fr), equipment_repo(er) {}
+
+void UserController::show_users() {
+    for (auto user: user_repo.get_users() ) {
+        std::cout << "id: "<< user.get_id_user() <<",name: "<< user.get_name_user() ;
+        std::cout<< ", ids_field: ";
+        for (auto field: user.get_field_user())
+            std::cout <<field<<" ";
+        std::cout<< ", ids_equipment: ";
+        for (auto equipment: user.get_equipment_user())
+            std::cout << equipment<<" ";
+        std::cout << std::endl;
+    }
+
+}
 
 void UserController::add_user(int id,std::string name) {
     user_repo.add_user(User(id,name));

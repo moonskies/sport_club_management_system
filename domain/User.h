@@ -15,6 +15,7 @@ public:
 
 
     int get_id_user() const;
+    std::string get_name_user() const;
     std::vector<int> get_field_user() const;
     std::vector<int> get_equipment_user() const;
     void add_field(int id);
