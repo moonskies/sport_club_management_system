@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <string>
+#include <filesystem>
+
 
 void showMenu() {
     std::cout << "\n===== MENIU PRINCIPAL =====\n";
@@ -27,8 +29,9 @@ void runUI() {
     EquipmentRepository er;
     MatchRepository mr;
 
+
     ur.load_from_file("data/users.txt");
-    fr.load_from_file("data/fields.txt.txt");
+    fr.load_from_file("data/fields.txt");
     er.load_from_file("data/equipment.txt");
 
     UserController uc(ur, fr, er);

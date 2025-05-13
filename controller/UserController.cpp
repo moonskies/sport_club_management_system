@@ -4,8 +4,8 @@
 UserController::UserController(UserRepository& ur, FieldRepository& fr, EquipmentRepository& er)
     : user_repo(ur), field_repo(fr), equipment_repo(er) {}
 
-void UserController::add_user(int id) {
-    user_repo.add_user(User(id));
+void UserController::add_user(int id,std::string name) {
+    user_repo.add_user(User(id,name));
 }
 
 bool UserController::field_reservation(int user_id, const std::string& field_type) {
