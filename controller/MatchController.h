@@ -30,3 +30,4 @@ public:
     // Returneaza numarul de locuri disponibile pentru un meci (daca exista)
     std::optional<int> getAvailableSpots(int matchId) const;
 };
+

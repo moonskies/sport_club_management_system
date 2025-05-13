@@ -2,19 +2,25 @@
 // Created by Alexandra Bota on 12.05.2025.
 //
 #include "FieldController.h"
-
 #include <iostream>
 
+FieldController::FieldController(FieldRepository& fr) : repo(fr) {
+    fields = repo.get_fields();
+}
 
+void FieldController::add_field(const Field& field) {
+    fields.push_back(field);
+    repo.add_field(field);
+}
 
-void FieldController::show_fields()  {
-
-    for ( auto field: fields) {
-        std::cout <<  "fieldcontrollercpp";
-        std::cout << field.get_id_field() << " "<< field.get_type_field() << " "
-        << field.get_condition_field() << " "<< field.get_max_players_field()<< " "<< field.get_is_private();
+void FieldController::show_fields() {
+    for (const auto& field : fields) {
+        std::cout << "ID: " << field.get_id_field()
+                  << ", Tip: " << field.get_type_field()
+                  << ", Conditie: " << field.get_condition_field()
+                  << ", Max jucatori: " << field.get_max_players_field()
+                  << ", Privat: " << (field.get_is_private() ? "Da" : "Nu") << "\n";
     }
-
 }
 
 Field* FieldController::get_field_by_id(int id) {

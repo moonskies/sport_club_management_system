@@ -31,3 +31,5 @@ Match* MatchRepository::findById(int id) {
     }
     return nullptr;
 }
+
+//design pattern ..., mwc???, dc e referinta acolo la clasa, templetizare polimorfism, stl standard template levels

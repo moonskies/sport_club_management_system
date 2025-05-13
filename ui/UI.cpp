@@ -38,7 +38,7 @@ void runUI() {
     er.load_from_file("../data/equipment.txt");
 
     UserController uc(ur, fr, er);
-    //FieldController fc;
+    FieldController fc(fr);
     MatchController mc(mr);
 
     //fc.show_fields();
@@ -123,10 +123,13 @@ void runUI() {
         }
         else if (opt ==8)
             uc.show_users();
+        else if (opt == 9) {
+            fc.show_fields();
+        }
     } while (opt != 0);
 
     ur.save_to_file("data/users.txt");
-    fr.save_to_file("data/fields.txt.txt");
+    fr.save_to_file("data/fields.txt");
     er.save_to_file("data/equipment.txt");
 
     std::cout << "La revedere!\n";
