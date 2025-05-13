@@ -30,3 +30,12 @@ bool Match::isUserEnrolled(const std::string& username) const {
     }
     return false;
 }
+
+void Match::addSpectator(const std::string& name) {
+    spectators.push_back(name);
+}
+
+std::vector<std::string> Match::getSpectators() const {
+    return spectators;
+}
+

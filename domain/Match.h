@@ -13,6 +13,8 @@ private:
     int maxParticipants;
     std::vector<std::string> participants;
     bool isPublic;
+    std::vector<std::string> spectators;
+
 
 public:
     Match(int id, const std::string& sport, const std::string& location, int maxParticipants, bool isPublic);
@@ -27,4 +29,8 @@ public:
 
     void addParticipant(const std::string& username);
     bool isUserEnrolled(const std::string& username) const;
+
+    void addSpectator(const std::string& name);
+    std::vector<std::string> getSpectators() const;
+
 };

@@ -25,4 +25,8 @@ public:
 
     // gaseste un meci după ID (folosit pentru inscriere)
     Match* findById(int id);
+
+    // returnează referință la vectorul intern cu meciuri
+    std::vector<Match>& getMatches();
+
 };

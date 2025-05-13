@@ -32,4 +32,11 @@ std::optional<int> MatchController::getAvailableSpots(int matchId) const {
         return match->getAvailableSpots();
     }
     return std::nullopt;
+    }
+Match* MatchController::getMatchById(int id) {
+    for (auto& match : repo.getMatches()) {
+        if (match.getId() == id)
+            return &match;
+    }
+    return nullptr;
 }

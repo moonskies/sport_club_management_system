@@ -25,6 +25,7 @@ void showMenu() {
     std::cout << "8. afiseaza userii\n";
     std::cout << "9. afiseaza terenuri\n";
     std:: cout<< "10. afiseaza echipament\n";
+    std::cout << "11. Spectează un meci\n";
     std::cout << "0. Ieșire\n";
 }
 
@@ -131,6 +132,34 @@ void runUI() {
         else if (opt == 10) {
           ec.show_equipment();
         }
+        else if (opt == 11) {
+            int match_id;
+            std::string name;
+            std::cout << "ID meci: "; std::cin >> match_id;
+            std::cin.ignore();
+            std::cout << "Nume utilizator: "; std::getline(std::cin, name);
+
+            auto match = mc.getMatchById(match_id);
+            if (!match) {
+                std::cout << "Meciul nu există.\n";
+            } else {
+                if (match->getIsPublic()) {
+                    match->addSpectator(name);
+                    std::cout << "Ați fost adăugat ca spectator la meciul public.\n";
+                } else {
+                    std::cout << "Acesta este un meci privat. Spectarea costă 10 lei. Continuați? (1/0): ";
+                    int confirm;
+                    std::cin >> confirm;
+                    if (confirm == 1) {
+                        match->addSpectator(name);
+                        std::cout << "Ați fost adăugat ca spectator la meciul privat.\n";
+                    } else {
+                        std::cout << "Spectarea a fost anulată.\n";
+                    }
+                }
+            }
+        }
+
     } while (opt != 0);
 
     ur.save_to_file("data/users.txt");

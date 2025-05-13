@@ -29,5 +29,9 @@ public:
 
     // Returneaza numarul de locuri disponibile pentru un meci (daca exista)
     std::optional<int> getAvailableSpots(int matchId) const;
+
+    // caută un meci după ID-ul lui și returnează un pointer
+    Match* getMatchById(int id);
+
 };
 

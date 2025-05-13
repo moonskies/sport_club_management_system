@@ -32,4 +32,9 @@ Match* MatchRepository::findById(int id) {
     return nullptr;
 }
 
+std::vector<Match>& MatchRepository::getMatches() {
+    return matches;
+}
+
+
 //design pattern ..., mwc???, dc e referinta acolo la clasa, templetizare polimorfism, stl standard template levels

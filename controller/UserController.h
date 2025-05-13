@@ -17,5 +17,5 @@ public:
     bool equipment_reservation(int user_id, const std::string& type,int qty);
     bool spectate_match(int user_id, int field_id);
 
-    User* get_user_by_id(int id); //pt utilizator extern
+    User* get_user_by_id(int id);
 };
