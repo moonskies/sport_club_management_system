@@ -22,12 +22,11 @@ void UserRepository::save_to_file(const std::string& filename) {
 }
 
 void UserRepository::load_from_file(const std::string& filename) {
-    std::cout<<" hello";
     users.clear();
     std::ifstream fin(filename);
     std::string line;
 
-    if (!fin.is_open()) {throw std::runtime_error("File does not exist");}
+    //if (!fin.is_open()) {throw std::runtime_error("File does not exist");}
 
 
     while (std::getline(fin, line)) {
@@ -57,7 +56,7 @@ void UserRepository::load_from_file(const std::string& filename) {
         while (std::getline(equip_ss, segment, ',')) {
             user.ids_equipment.push_back(std::stoi(segment));
         }
-        std::cout<<user.id_user<< " "<< user.name;
+
         users.push_back(user);
     }
 }
