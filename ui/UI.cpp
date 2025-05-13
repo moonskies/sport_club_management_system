@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 
+#include "FieldController.h"
 
 
 void showMenu() {
@@ -21,6 +22,8 @@ void showMenu() {
     std::cout << "6. Înscrie-te la un meci\n";
     std::cout << "7. Afișează locuri disponibile la un meci\n";
     std::cout << "8. afiseaza userii\n";
+    std::cout << "9. afiseaza terenuri\n";
+    std:: cout<< "10. afiseaza echipament\n";
     std::cout << "0. Ieșire\n";
 }
 
@@ -35,9 +38,10 @@ void runUI() {
     er.load_from_file("../data/equipment.txt");
 
     UserController uc(ur, fr, er);
+    //FieldController fc;
     MatchController mc(mr);
 
-
+    //fc.show_fields();
 
     int opt;
     do {
