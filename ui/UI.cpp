@@ -17,16 +17,16 @@ void showMenu() {
     std::cout << "\n===== MENIU PRINCIPAL =====\n";
     std::cout << "1. Rezervare teren\n";
     std::cout << "2. Rezervare echipament\n";
-    std::cout << "3. Adaugă meci\n";
-    std::cout << "4. Afișează toate meciurile\n";
-    std::cout << "5. Caută meci după sport\n";
-    std::cout << "6. Înscrie-te la un meci\n";
-    std::cout << "7. Afișează locuri disponibile la un meci\n";
-    std::cout << "8. afiseaza userii\n";
-    std::cout << "9. afiseaza terenuri\n";
-    std:: cout<< "10. afiseaza echipament\n";
-    std::cout << "11. Spectează un meci\n";
-    std::cout << "0. Ieșire\n";
+    std::cout << "3. Adauga meci\n";
+    std::cout << "4. Afiseaza toate meciurile\n";
+    std::cout << "5. Cauta meci după sport\n";
+    std::cout << "6. Inscrie-te la un meci\n";
+    std::cout << "7. Afisează locuri disponibile la un meci\n";
+    std::cout << "8. Afiseaza userii\n";
+    std::cout << "9. Afiseaza terenuri\n";
+    std:: cout<< "10. Afiseaza echipament\n";
+    std::cout << "11. Specteaza un meci\n";
+    std::cout << "0. Iesire\n";
 }
 
 void runUI() {
