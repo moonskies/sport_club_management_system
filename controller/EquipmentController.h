@@ -6,6 +6,11 @@
 #define EQUIPMENTCONTROLLER_H
 
 #endif //EQUIPMENTCONTROLLER_H
+#include "EquipmentRepository.h"
+#include <vector>
+#include <string>
+#pragma once
+
 class EquipmentController {
     EquipmentRepository& equipmentRepo;
 
