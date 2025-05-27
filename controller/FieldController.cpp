@@ -14,6 +14,9 @@ void FieldController::add_field(const Field& field) {
 }
 
 void FieldController::show_fields() {
+
+
+
     for (const auto& field : fields) {
         std::cout << "ID: " << field.get_id_field()
                   << ", Tip: " << field.get_type_field()

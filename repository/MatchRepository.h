@@ -29,4 +29,8 @@ public:
     // returnează referință la vectorul intern cu meciuri
     std::vector<Match>& getMatches();
 
+    void save_to_file(const std::string& filename) const;
+    void load_from_file(const std::string& filename);
+
+
 };

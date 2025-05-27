@@ -36,6 +36,8 @@ void FieldRepository::save_to_file(const std::string& filename) {
 
 // Load fields from file
 void FieldRepository::load_from_file(const std::string& filename) {
+
+
     fields.clear();
     std::ifstream fin(filename);
     if (!fin.is_open()) {

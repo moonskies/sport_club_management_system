@@ -35,14 +35,18 @@ void runUI() {
     EquipmentRepository er;
     MatchRepository mr;
 
+
+
     ur.load_from_file("../data/users.txt");
     fr.load_from_file("../data/fields.txt");
     er.load_from_file("../data/equipment.txt");
+    mr.load_from_file("../data/match.txt");
 
     UserController uc(ur, fr, er);
     FieldController fc(fr);
     MatchController mc(mr);
     EquipmentController ec(er);
+
 
     //fc.show_fields();
 
@@ -89,11 +93,23 @@ void runUI() {
         } else if (opt == 4) {
             auto matches = mc.getAllMatches();
             for (const auto& match : matches) {
-                std::cout << "ID: " << match.getId() << ", Sport: " << match.getSport()
+                std::cout << "ID: " << match.getId()
+                          << ", Sport: " << match.getSport()
                           << ", Locație: " << match.getLocation()
                           << ", Locuri disponibile: " << match.getAvailableSpots()
-                          << ", Public: " << (match.getIsPublic() ? "Da" : "Nu") << "\n";
+                          << ", Public: " << (match.getIsPublic() ? "Da" : "Nu")
+                          << ", Participanți: ";
+
+                for (const auto& p : match.getParticipants())
+                    std::cout << p << " ";
+
+                std::cout << ", Spectatori: ";
+                for (const auto& s : match.getSpectators())
+                    std::cout << s << " ";
+
+                std::cout << "\n";
             }
+
 
         } else if (opt == 5) {
             std::string sport;
@@ -160,11 +176,15 @@ void runUI() {
             }
         }
 
+        //ur.save_to_file("../data/users.txt");
+        //fr.save_to_file("../data/fields.txt");
+        //er.save_to_file("../data/equipment.txt");
+        //er.save_to_file("../data/match.txt");
+
+
     } while (opt != 0);
 
-    ur.save_to_file("data/users.txt");
-    fr.save_to_file("data/fields.txt");
-    er.save_to_file("data/equipment.txt");
+
 
     std::cout << "La revedere!\n";
 }

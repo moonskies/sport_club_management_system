@@ -1,0 +1,9 @@
+1|fotbal|cluj|3|1||
+2|baschet|3|5|1||
+3|baschtet|mures|3|1||
+4|tenis|3|1|1||
+5|innot|reghin|4|1||
+6|sport|tgmures|4|1||
+7|pingpong|sibiu|4|1||
+8|sah|cluj|4|1||
+9|sah2|cluj|5|1||
