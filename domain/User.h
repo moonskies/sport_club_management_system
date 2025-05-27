@@ -1,18 +1,20 @@
-//User.h
 #pragma once
 #include <string>
 #include <vector>
+#include "Entity.h"
 
-class User {
+class User : public Entity {
     friend class UserRepository;
-    int id_user;
+
+protected:
     std::string name;
     std::vector<int> ids_field;
     std::vector<int> ids_equipment;
 
 public:
-    User(int id, std::string name, std::vector<int> ids_field={}, std::vector<int> ids_equipment={});
-
+    User(int id, std::string name,
+         std::vector<int> ids_field = {},
+         std::vector<int> ids_equipment = {});
 
     int get_id_user() const;
     std::string get_name_user() const;
@@ -20,4 +22,6 @@ public:
     std::vector<int> get_equipment_user() const;
     void add_field(int id);
     void add_equipment(int id);
+
+    std::string getInfo() const override;
 };

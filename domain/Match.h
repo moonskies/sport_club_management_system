@@ -1,13 +1,10 @@
-//
-// Created by andre on 12/05/2025.
-//
 #pragma once
 #include <string>
 #include <vector>
+#include "Entity.h"
 
-class Match {
+class Match : public Entity {
 private:
-    int id;
     std::string sport;
     std::string location;
     int maxParticipants;
@@ -15,11 +12,10 @@ private:
     bool isPublic;
     std::vector<std::string> spectators;
 
-
 public:
     Match(int id, const std::string& sport, const std::string& location, int maxParticipants, bool isPublic);
 
-    int getId() const;
+    int getId() const override;  // din Entity
     std::string getSport() const;
     std::string getLocation() const;
     int getMaxParticipants() const;
@@ -33,4 +29,5 @@ public:
     void addSpectator(const std::string& name);
     std::vector<std::string> getSpectators() const;
 
+    std::string getInfo() const override;
 };

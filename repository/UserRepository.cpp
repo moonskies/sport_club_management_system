@@ -22,7 +22,7 @@ void UserRepository::save_to_file(const std::string& filename) const {
     }
 
     for (const User& user : users) {
-        fout << user.id_user << "|";
+        fout << user.id << "|";
         fout << user.name << "|";
 
         // Write ids_field
@@ -71,7 +71,7 @@ void UserRepository::load_from_file(const std::string& filename) {
 
 
         User user(0,"0");
-        user.id_user = std::stoi(tokens[0]);
+        user.id = std::stoi(tokens[0]);
         user.name = tokens[1];
 
        //user.ids_field.clear();
