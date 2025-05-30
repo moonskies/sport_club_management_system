@@ -1,6 +1,3 @@
-//
-// Created by Claudia on 5/13/2025.
-//
 #pragma once
 #include <vector>
 #include <string>
@@ -27,4 +24,3 @@ void EquipmentController::show_equipment() const {
                   << ", Stare: " << eq.get_condition_equipment() << ", ID Utilizator: " << eq.get_id_user() << '\n';
     }
 }
-

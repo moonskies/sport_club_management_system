@@ -1,6 +1,3 @@
-//
-// Created by andre on 12/05/2025.
-//
 #include "MatchController.h"
 
 MatchController::MatchController(MatchRepository& repo) : repo(repo) {}
@@ -32,7 +29,7 @@ std::optional<int> MatchController::getAvailableSpots(int matchId) const {
         return match->getAvailableSpots();
     }
     return std::nullopt;
-    }
+}
 Match* MatchController::getMatchById(int id) {
     for (auto& match : repo.getMatches()) {
         if (match.getId() == id)

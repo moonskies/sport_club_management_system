@@ -113,10 +113,10 @@ void runUI() {
 
         } else if (opt == 5) {
             std::string sport;
-            std::cout << "Sport căutat: "; std::getline(std::cin, sport);
+            std::cout << "Sport cautat: "; std::getline(std::cin, sport);
             auto found = mc.searchBySport(sport);
             for (const auto& match : found) {
-                std::cout << "ID: " << match.getId() << ", Locație: " << match.getLocation()
+                std::cout << "ID: " << match.getId() << ", Locatie: " << match.getLocation()
                           << ", Locuri: " << match.getAvailableSpots() << "\n";
             }
 
@@ -176,13 +176,18 @@ void runUI() {
             }
         }
 
-        //ur.save_to_file("../data/users.txt");
-        //fr.save_to_file("../data/fields.txt");
-        //er.save_to_file("../data/equipment.txt");
-        //er.save_to_file("../data/match.txt");
+        // ur.save_to_file("../data/users.txt");
+        // fr.save_to_file("../data/fields.txt");
+        // er.save_to_file("../data/equipment.txt");
+        // er.save_to_file("../data/match.txt");
 
 
     } while (opt != 0);
+
+    ur.save_to_file("../data/users.txt");
+    fr.save_to_file("../data/fields.txt");
+    er.save_to_file("../data/equipment.txt");
+    mr.save_to_file("../data/match.txt");
 
 
 

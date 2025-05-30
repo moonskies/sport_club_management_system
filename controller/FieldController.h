@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "Field.h"
@@ -17,4 +16,3 @@ public:
     Field* get_field_by_id(int id);
     std::vector<Field>& get_all_fields();
 };
-

@@ -1,1 +1,3 @@
-3 |minge|1 7|paleta|1
+3|minge|1
+7|paleta|1
+1|fluturas|1

@@ -1,6 +1,3 @@
-//
-// Created by andre on 12/05/2025.
-//
 #include "MatchRepository.h"
 #include <iostream>
 #include <fstream>
@@ -50,8 +47,6 @@ void MatchRepository::save_to_file(const std::string& filename) const {
 
     std::ofstream out(filename);
     if (!out) throw std::runtime_error("Could not open file for writing: " + filename);
-
-    std::cout<<"salutt";
 
     for (const auto& match : matches) {
         out << match.getId() << "|"
@@ -137,8 +132,3 @@ void MatchRepository::load_from_file(const std::string& filename) {
 
     in.close();
 }
-
-
-
-
-//design pattern ..., mvc???, dc e referinta acolo la clasa, templetizare polimorfism, stl standard template levels

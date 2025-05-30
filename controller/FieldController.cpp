@@ -1,6 +1,3 @@
-//
-// Created by Alexandra Bota on 12.05.2025.
-//
 #include "FieldController.h"
 #include <iostream>
 

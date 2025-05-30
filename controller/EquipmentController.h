@@ -1,7 +1,3 @@
-//
-// Created by Claudia on 5/13/2025.
-//
-
 #ifndef EQUIPMENTCONTROLLER_H
 #define EQUIPMENTCONTROLLER_H
 

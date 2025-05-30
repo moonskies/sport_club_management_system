@@ -1,4 +1,3 @@
-// UserRepository.cpp
 #include "UserRepository.h"
 #include "../domain/User.h"
 #include <fstream>
@@ -91,4 +90,3 @@ void UserRepository::load_from_file(const std::string& filename) {
     }
 
 }
-
