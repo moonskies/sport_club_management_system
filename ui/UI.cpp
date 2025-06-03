@@ -132,14 +132,17 @@ void runUI() {
                 std::cout << "Înscriere eșuată. Verifică dacă meciul este public și are locuri.\n";
 
         } else if (opt == 7) {
-            int id;
-            std::cout << "ID meci: "; std::cin >> id;
-            auto spots = mc.getAvailableSpots(id);
-            if (spots)
-                std::cout << "Locuri disponibile: " << *spots << "\n";
-            else
-                std::cout << "Meci inexistent.\n";
+            int match_id;
+            std::cout << "Introdu ID-ul meciului: ";
+            std::cin >> match_id;
+            auto available = mc.getAvailableSpots(match_id);
+            if (available.has_value()) {
+                std::cout << "Locuri disponibile pentru meciul cu ID " << match_id << ": " << available.value() << "\n";
+            } else {
+                std::cout << "Meciul cu ID-ul " << match_id << " nu a fost găsit.\n";
+            }
         }
+
         else if (opt ==8)
             uc.show_users();
         else if (opt == 9) {

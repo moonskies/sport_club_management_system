@@ -1,11 +1,11 @@
 #include "UserController.h"
-
+#include "User.h"
 #include <iostream>
 
 UserController::UserController(UserRepository& ur, FieldRepository& fr, EquipmentRepository& er)
     : user_repo(ur), field_repo(fr), equipment_repo(er) {}
 
-void UserController::show_users() {
+void UserController::show_users() const {
     for (auto user: user_repo.get_users() ) {
         std::cout << "id: "<< user.get_id_user() <<",name: "<< user.get_name_user() ;
         std::cout<< ", ids_field: ";

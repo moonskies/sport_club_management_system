@@ -12,7 +12,7 @@ class UserController {
 public:
     UserController(UserRepository& ur, FieldRepository& fr, EquipmentRepository& er);
     void add_user(int id,std::string name);
-    void show_users();
+    void show_users() const;
     bool field_reservation(int user_id, const std::string& field_type);
     bool equipment_reservation(int user_id, const std::string& type,int qty);
     bool spectate_match(int user_id, int field_id);

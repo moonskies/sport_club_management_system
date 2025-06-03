@@ -37,3 +37,13 @@ Match* MatchController::getMatchById(int id) {
     }
     return nullptr;
 }
+
+std::vector<Match> MatchController::findMatchesBySport(const std::string& sport) {
+    std::vector<Match> result;
+    for (const auto& match : this->repo.getMatches()) {
+        if (match.getSport() == sport) {
+            result.push_back(match);
+        }
+    }
+    return result;
+}

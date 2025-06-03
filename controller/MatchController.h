@@ -30,5 +30,9 @@ public:
     // caută un meci după ID-ul lui și returnează un pointer
     Match* getMatchById(int id);
 
+    //cauta un meci dupa sport
+    std::vector<Match> findMatchesBySport(const std::string& sport);
+
+
 };
 
