@@ -1,70 +1,32 @@
-scrieti aici ce alte modificari credeti ca r fi bune
+Sport Club Management System
+An OOP-based C++ application designed to manage sports facility operations, including field reservations, equipment rentals, and spectator logistics. The project follows an N-Tier architecture to ensure modularity and clean separation of concerns.
 
+Core Features
+Field Management: Reserve specific field types with options for public or private matches.
 
-----------------------------------------------
-29 april -cata
+Equipment Rental: Integrated inventory system that validates rentals against active field reservations.
 
-DOMAIN
-User  
-// ID_user, vector<int> IDS_field, vector<int> IDS_equipment
-// get_id_user, get_field_user, get_equipment_user
+Match Discovery: System for users to join existing public matches or view available player slots.
 
-Field 
-//ID_field, type_field, condition_field, max_players_field 
-// get_id_field, get_type_field, get_condition_field
-Equipment 
-//ID_equipment, type_equipment, condition_equipmnent
-// get_id_equipment, get_type_equipment, get_condition_equipmnent, get_quantity_equipment
+Spectator Logic: Functionality to spectate matches, with specific pricing logic for private vs. public events.
 
-REPO
-User_repository   
-// vector<User>
-//
-Field_repository 
-// vector<Field>
-//
-Equipment_repository 
-// vector<Equipment>
-// 
+Asset Tracking: Monitoring system for the condition and occupancy of club resources.
 
-CONTROLLER
+System Architecture
+Domain Layer (Entities)
+User: Stores identity and links to reserved field and equipment IDs.
 
-User_controller
-// user
-// add_user, field_reservation, equipment_reservation
-Field_controller
-// field
-// get_field_table 
-Equipment_controller
-//equipment
-//equipment_table
+Field: Tracks type, maintenance condition, and occupancy.
 
-UI
+Equipment: Manages gear type, condition, and quantity.
 
-1. rezervare teren
-// userul alege un tip de teren. o sa i se asigneze un teren de acel tip cu un anumit ID
+Polymorphism: Implemented between Field and Equipment assets for shared management logic.
 
-//optional alege daca meciul e privat sau nu, adica daca se mai pot inscrie si alti jucatori
-//optional daca e privat sa spectatezi meciul ar costa X lei.
-2. rezervare echipament
-// trebuie sa verificam daca ID_user a rezervat un teren inainte.
-// alege tipul echipamentului alege n bucati. i se asigneaza n bucati echipament cu n id uri diferite.
+Repository Layer
+Provides data persistence using std::vector containers for Users, Fields, and Equipment.
 
-3. cauta un meci
-//optional userul poate sa inscrie la un meci sa joace, daca meciul este public
-//optional scriem cate locuri mai sunt disponibile
-4. spectateaza un meci
-//optional poti spectata pe gratis un meci public, sau pe bani un meci privat.
-//optional scriem cati specatori is deja
- 
+Controller Layer
+Handles business logic, including reservation validation, equipment assignment, and availability tables.
 
-
-
-
-
-(polimorfism intrefield si equipment)
-
-plus alte chestii
-daca field-ul nu e ocupat ID_user e zero
------------------------------------------------
-
+UI Layer
+Console-based interface for user interaction and system navigation
